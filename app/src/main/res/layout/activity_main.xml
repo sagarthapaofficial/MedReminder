@@ -45,9 +45,10 @@
     <Button
         android:id="@+id/newAccount_id"
         android:layout_width="353dp"
-        android:background="#3273a8"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
+        android:background="#3273a8"
+        android:onClick="Register"
         android:text="@string/newAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"

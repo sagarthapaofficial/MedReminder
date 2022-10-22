@@ -2,4 +2,5 @@
     <string name="app_name">MedReminder</string>
     <string name="login">Login</string>
     <string name="newAccount">Create new account</string>
+    <string name="Register">Register</string>
 </resources>
