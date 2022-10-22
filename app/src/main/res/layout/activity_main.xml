@@ -6,13 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="301dp"
+        android:layout_height="318dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="356dp"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_email_id" />
+
+    <Button
+        android:id="@+id/login_id"
+        android:layout_width="158dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:background="#3273a8"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <Button
+        android:id="@+id/newAccount_id"
+        android:layout_width="353dp"
+        android:background="#3273a8"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/newAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/or" />
+
+    <EditText
+        android:id="@+id/phone_email_id"
+        android:layout_width="362dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Phone number or email"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="52dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="80dp"
+        android:text="Or"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_id" />
 </androidx.constraintlayout.widget.ConstraintLayout>
