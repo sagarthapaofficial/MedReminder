@@ -1,12 +1,17 @@
 package com.example.medreminder;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Register(View view)
     {
-        //Open the Register activity
+
 
         //passes the value to the second activity through the intent
         Intent intent = new Intent(this,RegisterActivity.class);
@@ -24,11 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     public void Login(View view)
     {
-        //Open the Register activity
+       //Check if user enters valid username and password
 
-        //passes the value to the second activity through the intent
+        //if valid goes to the home activity.
         Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);
 
