@@ -8,51 +8,128 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="332dp"
-        android:layout_height="327dp"
+        android:layout_width="119dp"
+        android:layout_height="87dp"
         android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/firstname_id"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/username_id"
-        android:layout_width="343dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/lastname_id"
+        android:layout_width="347dp"
+        android:layout_height="56dp"
         android:ems="10"
-        android:hint="Phone number or email"
+        android:hint="lastName"
         android:inputType="textEmailAddress"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/email_id"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/firstname_id"
+        app:layout_constraintVertical_bias="0.5" />
 
     <EditText
         android:id="@+id/password_id"
-        android:layout_width="343dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="347dp"
+        android:layout_height="56dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/register_id"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_id" />
+        app:layout_constraintTop_toBottomOf="@+id/postalcode_id"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/register_id"
-        android:layout_width="163dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="172dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="16dp"
         android:onClick="getRegister"
         android:text="@string/Register"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/firstname_id"
+        android:layout_width="347dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="FirstName"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/lastname_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_id" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/email_id"
+        android:layout_width="347dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/phoneNumber_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastname_id"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/phoneNumber_id"
+        android:layout_width="347dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/address_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_id"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/address_id"
+        android:layout_width="347dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/postalcode_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber_id"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <EditText
+        android:id="@+id/postalcode_id"
+        android:layout_width="347dp"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:hint="Postal Code"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/password_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address_id"
+        app:layout_constraintVertical_bias="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

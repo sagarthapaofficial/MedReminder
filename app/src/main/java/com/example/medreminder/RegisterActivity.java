@@ -1,9 +1,7 @@
 package com.example.medreminder;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,8 +9,15 @@ import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText userName=null;
     EditText password=null;
+    EditText firstName=null;
+    EditText lastName=null;
+    EditText email=null;
+    EditText phoneNumber=null;
+    EditText postalCode=null;
+    EditText address=null;
+
+
     User user=null;
     DBAdapter db=null;
 
@@ -28,15 +33,24 @@ public class RegisterActivity extends AppCompatActivity {
     public void getRegister(View view)
     {
         //Open the Register activity
-        userName=findViewById(R.id.username_id);
+        firstName=findViewById(R.id.firstname_id);
         password=findViewById(R.id.password_id);
+        lastName=findViewById(R.id.lastname_id);
+        email=findViewById(R.id.email_id);
+        phoneNumber=findViewById(R.id.phoneNumber_id);
+        postalCode=findViewById(R.id.postalcode_id);
+        address=findViewById(R.id.address_id);
 
         try {
 
-            user = new User(userName.getText().toString(), password.getText().toString());
+            user = new User(password.getText().toString(),firstName.getText().toString(),lastName
+                    .getText().toString(),address.getText().toString(), postalCode.getText().toString(),phoneNumber.getText().toString(), email.getText().toString());
+
+            //connects to the database
             db = new DBAdapter(this);
             //db.open();
 
+            //if addition of user is successful.
             if (db.addUser(user)) {
                 Toast.makeText(RegisterActivity.this, "User Registered", Toast.LENGTH_SHORT).show();
             } else {
@@ -49,25 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
             System.out.println(ex.getStackTrace());
         }
 
-//        Cursor res=db.getUser(user);
-//        if(res.getCount()==0)
-//        {
-//            Toast.makeText(RegisterActivity.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
-//        }
-//
-//        StringBuffer buffer= new StringBuffer();
-//        while(res.moveToNext())
-//        {
-//            buffer.append("username"+ res.getString(1)+"\n");
-//            buffer.append("password"+ res.getString(2)+"\n");
-//        }
-//
-//
-//        //Shows the value of buffer in the alert dialog.
-//        AlertDialog.Builder builder=new AlertDialog.Builder(RegisterActivity.this);
-//        builder.setCancelable(true);
-//        builder.setMessage(buffer.toString());
-//        builder.show();
+
 
     }
 }

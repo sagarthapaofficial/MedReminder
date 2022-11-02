@@ -10,12 +10,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBAdapter {
 
     private static final int DATABASE_VERSION=1;
-    private static final String DATABASE_NAME="medreminder";
+    private static final String DATABASE_NAME="MedReminder";
     private static final String TABLE_NAME="users";
     static final String TAG = "DBAdapter";
 
 
-    private static final String TABLE_CREATE="create table users (username TEXT PRIMARY KEY, password text not null)";
+    private static final String TABLE_CREATE="create table users (USERID INTEGER PRIMARY key, Firusername TEXT PRIMARY KEY, password text not null)";
 
     final Context context;
 
