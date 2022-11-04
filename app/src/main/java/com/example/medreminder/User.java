@@ -11,6 +11,7 @@ public class User {
     private String phoneNumber="";
     private String Doctor="";
     private String email="";
+    private String Image="";
 
 
     //constructor
@@ -23,6 +24,12 @@ public class User {
         this.postalCode=postalCode_;
         this.phoneNumber=phoneNumber_;
         this.email=email_;
+
+    }
+
+    public User()
+    {
+
     }
 
 
@@ -109,4 +116,11 @@ public class User {
     }
 
 
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
 }

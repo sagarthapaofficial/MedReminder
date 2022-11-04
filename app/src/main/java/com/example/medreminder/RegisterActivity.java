@@ -19,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     User user=null;
-    DBAdapter db=null;
+    DatabaseHelper db=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,22 +47,23 @@ public class RegisterActivity extends AppCompatActivity {
                     .getText().toString(),address.getText().toString(), postalCode.getText().toString(),phoneNumber.getText().toString(), email.getText().toString());
 
             //connects to the database
-            db = new DBAdapter(this);
-            //db.open();
+            db=new DatabaseHelper(getApplicationContext());
+            db.createDataBase();
 
             //if addition of user is successful.
             if (db.addUser(user)) {
+                System.out.println("user Added");
                 Toast.makeText(RegisterActivity.this, "User Registered", Toast.LENGTH_SHORT).show();
             } else {
                 System.out.println("Had Error on insertion");
                 Toast.makeText(RegisterActivity.this, "User Already Exists", Toast.LENGTH_LONG).show();
             }
+            db.close();
 
         }catch (Exception ex)
         {
             System.out.println(ex.getStackTrace());
         }
-
 
 
     }
