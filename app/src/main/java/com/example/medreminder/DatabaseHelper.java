@@ -44,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public Boolean addUser(User user) {
-
+        Cursor c=null;
         SQLiteDatabase db= this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put("FIRSTNAME",user.getfirstName());
@@ -57,19 +57,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("IMAGE",user.getImage());
         contentValues.put("PASSWORD",user.getPassword());
 
-        try {
-            long result = db.insert("USER", null, contentValues);
+        c = db.rawQuery("SELECT * FROM USER WHERE EMAIL='" +user.getEmail()+"'" , null);
 
-            if (result == -1) {
-                return false;
+        System.out.println(c.getCount());
+        if(c.getCount()==0) {
 
+            try {
+                long result = db.insert("USER", null, contentValues);
+
+                if (result == -1) {
+                    return false;
+
+                } else {
+                    return true;
+                }
+            } catch (Exception ex) {
+                System.out.println(ex.getStackTrace());
             }
-        }catch (Exception ex)
-        {
-            System.out.println(ex.getStackTrace());
         }
-
-        return true;
+        return false;
     }
 
 
