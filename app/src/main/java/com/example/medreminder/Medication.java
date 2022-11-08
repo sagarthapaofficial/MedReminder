@@ -19,6 +19,10 @@ public class Medication {
         this.link=link;
     }
 
+    public Medication() {
+
+    }
+
     //getter and setters
     public String getLink() {
         return link;

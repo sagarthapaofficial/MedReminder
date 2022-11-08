@@ -148,6 +148,100 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public Boolean addMedication(Medication medication) {
+        Cursor c=null;
+        SQLiteDatabase db= this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        //user id?
+        contentValues.put("NAME",medication.getName());
+        contentValues.put("DOSES",medication.getDoses());
+        contentValues.put("USAGE",medication.getUsage());
+        contentValues.put("NOTES",medication.getNotes());
+        contentValues.put("LINK",medication.getLink());
+
+      //  c = db.rawQuery("SELECT * FROM USER WHERE USERID ='" +medication.get()+"'" , null);
+
+        System.out.println(c.getCount());
+        if(c.getCount()==0) {
+
+            try {
+                long result = db.insert("MEDICATION", null, contentValues);
+
+                if (result == -1) {
+                    return false;
+
+                } else {
+                    return true;
+                }
+            } catch (Exception ex) {
+                System.out.println(ex.getStackTrace());
+            }
+        }
+        return false;
+    }
+
+
+    //retuns the cursor i.e the row
+
+    public Medication getMedication(String userId)
+    {
+        SQLiteDatabase db= this.getReadableDatabase();
+        Cursor c=null;
+        Medication medication=null;
+        try
+        {
+            c = db.rawQuery("SELECT * FROM MEDICATION WHERE USERID='" +userId+"'",null);
+            medication = new Medication();
+            //points the cursor to the first result.
+            c.moveToFirst();
+            medication.setName(c.getString(1));
+            medication.setDoses(c.getString(2));
+            medication.setUsage(c.getString(3));
+            medication.setNotes(c.getString(4));
+            medication.setLink(c.getString(5));
+
+            return medication;
+
+        }catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+
+        return medication;
+
+    }
+
+    //update the userInfo
+//    public Boolean UpdateMedication(Medication medication)
+//    {
+//        SQLiteDatabase db= this.getWritableDatabase();
+//        ContentValues contentValues=new ContentValues();
+//        contentValues.put("NAME",medication.getName());
+//        contentValues.put("DOSES",medication.getDoses());
+//        contentValues.put("USAGE",medication.getUsage());
+//        contentValues.put("NOTES",medication.getNotes());
+//        contentValues.put("LINK",medication.getLink());
+//
+//        try {
+//           // String query="SELECT * FROM MEDICATION WHERE USERID='" +medication.getUserId()+"'";
+//           // long result = db.update("MEDICATION", contentValues,query,null);
+//
+//            if (result == -1) {
+//                return false;
+//
+//            }else
+//            {
+//                return true;
+//            }        }catch (Exception ex)
+//        {
+//            System.out.println(ex.getStackTrace());
+//        }
+//
+//        return false;
+//
+//    }
+
+
 
     @Override
     public synchronized void close(){

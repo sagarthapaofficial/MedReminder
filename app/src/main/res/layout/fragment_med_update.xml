@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/med_Update"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/idCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="228dp"
+        android:text="@string/Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linkId" />
+
+    <Button
+        android:id="@+id/idAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="228dp"
+        android:text="@string/Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linkId" />
+
+    <EditText
+        android:id="@+id/nameId"
+        android:layout_width="214dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:hint="Medication Name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/dosesId"
+        android:layout_width="228dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Doses"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameId" />
+
+    <EditText
+        android:id="@+id/usageId"
+        android:layout_width="220dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="Usage"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dosesId" />
+
+    <EditText
+        android:id="@+id/notesId"
+        android:layout_width="229dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Notes"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usageId" />
+
+    <EditText
+        android:id="@+id/linkId"
+        android:layout_width="234dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:hint="Link to Medication Info"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notesId" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
