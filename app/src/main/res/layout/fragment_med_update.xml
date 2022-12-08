@@ -15,6 +15,8 @@
         android:layout_marginBottom="228dp"
         android:text="@string/Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/idAdd"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linkId" />
 
@@ -28,54 +30,64 @@
         android:text="@string/Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/idCancel"
         app:layout_constraintTop_toBottomOf="@+id/linkId" />
 
     <EditText
         android:id="@+id/nameId"
-        android:layout_width="214dp"
-        android:layout_height="56dp"
+        android:layout_width="234dp"
+        android:layout_height="53dp"
         android:layout_marginStart="71dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="Medication Name"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/dosesId"
-        android:layout_width="228dp"
-        android:layout_height="53dp"
+        android:layout_width="234dp"
+        android:layout_height="62dp"
         android:layout_marginStart="71dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Doses"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameId" />
 
     <EditText
         android:id="@+id/usageId"
-        android:layout_width="220dp"
-        android:layout_height="64dp"
+        android:layout_width="234dp"
+        android:layout_height="62dp"
         android:layout_marginStart="71dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Usage"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dosesId" />
 
     <EditText
         android:id="@+id/notesId"
-        android:layout_width="229dp"
-        android:layout_height="60dp"
+        android:layout_width="234dp"
+        android:layout_height="62dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Notes"
         android:inputType="textPersonName"
         android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usageId" />
 
@@ -84,10 +96,12 @@
         android:layout_width="234dp"
         android:layout_height="62dp"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Link to Medication Info"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notesId" />
 

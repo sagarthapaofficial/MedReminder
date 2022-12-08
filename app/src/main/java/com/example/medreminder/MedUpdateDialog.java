@@ -32,7 +32,7 @@ public class MedUpdateDialog extends DialogFragment {
         args.putString("name", name);
         meds.setArguments(args);
         return meds;
-    }
+}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstance){
@@ -70,7 +70,7 @@ public class MedUpdateDialog extends DialogFragment {
 
                     //connects to the database
                     db=new DatabaseHelper(getApplicationContext());
-                    db.createDataBase();
+                    db.createDataBase   ();
 
                     //if addition of user is successful.
                     if (db.addMedication(medication)) {
@@ -89,8 +89,8 @@ public class MedUpdateDialog extends DialogFragment {
         String title = getArguments().getString("name", "Enter Name of medication");
         getDialog().setTitle(title);
         medName.requestFocus();
-        getDialog().getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        getDialog().getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT);
     }
 
     private Context getApplicationContext() {
