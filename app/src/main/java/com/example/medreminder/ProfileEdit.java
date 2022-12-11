@@ -101,7 +101,7 @@ public class ProfileEdit extends DialogFragment {
         }
         else
         {
-
+           IVPreviewImage.setImageResource(R.drawable.ic_launcher_foreground);
         }
 
 
