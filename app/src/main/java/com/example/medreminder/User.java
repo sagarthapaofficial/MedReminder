@@ -1,6 +1,8 @@
 package com.example.medreminder;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private int id=0;
     private String password="";
@@ -15,7 +17,7 @@ public class User {
 
 
     //constructor
-    public User(String password_, String firstName_, String lastName_, String address_, String postalCode_, String phoneNumber_,  String email_)
+    public User(String password_, String firstName_, String lastName_, String address_, String postalCode_, String phoneNumber_,  String email_, String image_)
     {
         this.password=password_;
         this.firstName=firstName_;
@@ -24,6 +26,7 @@ public class User {
         this.postalCode=postalCode_;
         this.phoneNumber=phoneNumber_;
         this.email=email_;
+        this.Image=image_;
 
     }
 

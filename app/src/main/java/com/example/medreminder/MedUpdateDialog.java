@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,12 +45,12 @@ public class MedUpdateDialog extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
 
         medName =   view.findViewById(R.id.nameId);
-        btnAdd =    view.findViewById(R.id.idAdd);
+        btnAdd =    view.findViewById(R.id.idEdit);
         btnCancel = view.findViewById(R.id.idCancel);
-        doses = view.findViewById(R.id.dosesId);
-        usage = view.findViewById(R.id.usageId);
-        notes = view.findViewById(R.id.notesId);
-        link = view.findViewById(R.id.linkId);
+        doses = view.findViewById(R.id.lastNameId);
+        usage = view.findViewById(R.id.emailId);
+        notes = view.findViewById(R.id.phoneNoId);
+        link = view.findViewById(R.id.addressId);
 
         btnCancel.setOnClickListener(new View.OnClickListener(){
             @Override
