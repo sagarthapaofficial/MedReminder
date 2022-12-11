@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
     {
         //Open the Register activity
         firstName=findViewById(R.id.firstname_id);
-        password=findViewById(R.id.passwordid);
+        password=findViewById(R.id.password_id);
         lastName=findViewById(R.id.lastname_id);
         email=findViewById(R.id.email_id);
         phoneNumber=findViewById(R.id.phoneNumber_id);
