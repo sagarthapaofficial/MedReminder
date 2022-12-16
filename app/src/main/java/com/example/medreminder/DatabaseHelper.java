@@ -128,8 +128,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("PASSWORD",user.getPassword());
 
         try {
-            String query="SELECT * FROM USER WHERE EMAIL='" +user.getEmail()+"' OR PHONENUMBER='"+ user.getphoneNumber()+"'";
-            long result = db.update("USER", contentValues,query,null);
+            String query="EMAIL='" +user.getEmail()+"' OR PHONENUMBER='"+ user.getphoneNumber()+"'";
+            long result = db.update("USER", contentValues, query, null);
 
             if (result == -1) {
                 return false;
