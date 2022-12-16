@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 if(password.getText().toString().equals(user.getPassword()))
                 {
                     //if valid goes to the home activity.
-                    Intent intent = new Intent(this,dashboard.class);
+                    Intent intent = new Intent(this, dashboard.class);
+                    intent.putExtra("user", user);
                     startActivity(intent);
                 }else {
                     Toast.makeText(MainActivity.this, "Password is Incorrect", Toast.LENGTH_SHORT).show();
