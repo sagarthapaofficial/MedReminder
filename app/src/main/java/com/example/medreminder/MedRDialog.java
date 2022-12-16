@@ -123,7 +123,6 @@ public class MedRDialog extends DialogFragment implements View.OnClickListener {
                         public void onDateSet(DatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
 
-
                             setDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
 
                         }

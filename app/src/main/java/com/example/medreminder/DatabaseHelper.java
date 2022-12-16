@@ -159,24 +159,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("NOTES",medication.getNotes());
         contentValues.put("LINK",medication.getLink());
 
-      //  c = db.rawQuery("SELECT * FROM USER WHERE USERID ='" +medication.get()+"'" , null);
+        //Need to get userid to add medication to user
+        c = db.rawQuery("SELECT * FROM MEDICATION WHERE USERID ='1'", null);
 
-        System.out.println(c.getCount());
-        if(c.getCount()==0) {
-
+        System.out.println("Count is "+c.getCount());
+        if(c.getCount()!=0){
             try {
                 long result = db.insert("MEDICATION", null, contentValues);
 
                 if (result == -1) {
+
                     return false;
 
                 } else {
                     return true;
                 }
             } catch (Exception ex) {
-                System.out.println(ex.getStackTrace());
+                System.out.println(ex.getStackTrace() + "Not working here ************");
             }
         }
+        System.out.println("nope*****");
         return false;
     }
 

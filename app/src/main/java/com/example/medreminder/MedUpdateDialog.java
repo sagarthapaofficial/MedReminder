@@ -21,7 +21,7 @@ public class MedUpdateDialog extends DialogFragment {
     private Button btnCancel,btnAdd;
 
     Medication medication = null;
-    DatabaseHelper db = null;
+    DatabaseHelper db=null;
 
 
     public MedUpdateDialog(){}
@@ -69,13 +69,18 @@ public class MedUpdateDialog extends DialogFragment {
                             .getText().toString(),notes.getText().toString(), link.getText().toString());
 
                     //connects to the database
-                    db=new DatabaseHelper(getApplicationContext());
-                    db.createDataBase   ();
+                    db = new DatabaseHelper(MedUpdateDialog.this.getContext());
+                    db.createDataBase();
 
                     //if addition of user is successful.
                     if (db.addMedication(medication)) {
-                        System.out.println("user Added");
-                   //     Toast.makeText(MedUpdateDialog.this, "Medication Registered",).show();
+
+                        System.out.println("Meds Added");
+                        Toast.makeText(MedUpdateDialog.this.getContext(), "Medication Registered",Toast.LENGTH_SHORT).show();
+                        dismiss();
+                    }
+                    else {
+                        System.out.println("Had Error on insertion");
                     }
                     db.close();
 
@@ -92,10 +97,8 @@ public class MedUpdateDialog extends DialogFragment {
         getDialog().getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.MATCH_PARENT);
     }
-
     private Context getApplicationContext() {
         return mClass.getApplicationContext();
     }
-
 
 }

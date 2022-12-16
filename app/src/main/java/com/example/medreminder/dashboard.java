@@ -27,6 +27,8 @@ public class dashboard extends AppCompatActivity  {
     ImageButton medUpdate;
     ImageButton addReminder;
 
+    private DatabaseHelper db = null;
+
     //For the reminder fragment.
 
     private DatePicker date;
