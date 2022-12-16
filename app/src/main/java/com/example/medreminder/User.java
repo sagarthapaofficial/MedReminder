@@ -1,5 +1,8 @@
 package com.example.medreminder;
 
+
+import java.io.Serializable;
+
 public class User implements Serializable{
 
     private int id=0;
