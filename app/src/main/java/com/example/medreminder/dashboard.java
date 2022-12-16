@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.content.Intent;
 
 import java.sql.Time;
 import java.util.Calendar;
@@ -26,8 +27,11 @@ public class dashboard extends AppCompatActivity  {
 
     ImageButton medUpdate;
     ImageButton addReminder;
+    ImageButton menu;
 
     private DatabaseHelper db = null;
+    
+    User user;
 
     //For the reminder fragment.
 
@@ -75,6 +79,27 @@ public class dashboard extends AppCompatActivity  {
                 FragmentManager fm = getSupportFragmentManager();
                 MedRDialog editNameDialogFragment = MedRDialog.newInstance("Some Name");
                 editNameDialogFragment.show(fm, "fragment_reDialog");
+            }
+        });
+        
+        //for menu - user profile edit
+        Intent intent = getIntent();
+        user = (User) intent.getSerializableExtra("user");
+        menu = findViewById(id.menu_id);
+        //profile menu image change to user's profile image
+        menu.setImageResource(drawable.ic_launcher_foreground);
+
+        menu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                Intent intentToDialog = new Intent(dashboard.this, ProfileEdit.class);
+                intentToDialog.putExtra("user", user);
+                //start(intentToDialog); //Here is the exception
+
+                FragmentManager fm = getSupportFragmentManager();
+                ProfileEdit editUserInfoFragment = ProfileEdit.newInstance("Some Name");
+                editUserInfoFragment.show(fm, "fragment_user_profile");
             }
         });
 
