@@ -1,6 +1,6 @@
 package com.example.medreminder;
 
-public class User {
+public class User implements Serializable{
 
     private int id=0;
     private String password="";
