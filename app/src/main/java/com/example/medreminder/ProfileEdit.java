@@ -98,18 +98,9 @@ public class ProfileEdit extends DialogFragment {
         // register the UI widgets with their appropriate IDs
         IVPreviewImage = view.findViewById(R.id.profileImage);
 
-        if(user.getImage() != "")
-        {
-            byte[] decodedString = Base64.decode(user.getImage(), Base64.DEFAULT);
-            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, user.getImage().length());
-
-            //IVPreviewImage.setImageBitmap(decodedByte);
-
-        }
-        else
-        {
+       
             IVPreviewImage.setImageResource(R.drawable.ic_launcher_foreground);
-        }
+        
 
 
         // handle the Choose Image button to trigger
