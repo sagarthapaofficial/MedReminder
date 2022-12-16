@@ -91,7 +91,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             user= new User();
             //points the cursor to the first result.
             c.moveToFirst();
-            user.setPassword(c.getString(1));
+            user.setfirstName(c.getString(1));
             user.setLastName(c.getString(2));
             user.setAddress(c.getString(3));
             user.setPostalCode(c.getString(4));
